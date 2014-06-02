@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	if( isset($_GET['limpar_cart'])){
 
 		$_SESSION['cart']->emptyCart();
+		unset($_SESSION['cart']);
 		header("location: test.php");
 	}
 	
@@ -63,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 //var_dump($_SESSION['cart']);
 
-if(!isset($_SESSION['cart'])){
+if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 	echo 'Write The Session in <a href="write_session.php">Write Session </a>Before Run';
 	die();
 }
