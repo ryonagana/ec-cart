@@ -149,9 +149,6 @@ class Cart extends ArrayObject {
 	}
 
 
-
-
-
 	//just empty the array
 	public function emptyCart(){
 		$it = $this->getIterator();

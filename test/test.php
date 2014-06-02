@@ -99,7 +99,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 			if(!$it->valid()){
 
 
-				print "Sem Registros";
+				print "No Products";
 
 			}else {
 
@@ -110,7 +110,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 						<td><?php echo  $it->current()->description; ?></td>
 						<td><?php echo  Utils::Moneyformat($it->current()->price); ?></td>
 						<td><?php echo  $it->current()->quantity; ?></td>
-						<td><a href="<?php print "?remover=".$it->key(); ?>">Remover do Carrinho</a> </td>
+						<td><a href="<?php print "?remover=".$it->key(); ?>">Remove Product</a> </td>
 					</tr>
 			<?php 
 					$it->next();
@@ -125,7 +125,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 		</tr>
 		</tbody>
 	</table>
-	<a href="?limpar_cart=true">Limpar Carrinho</a>
+	<a href="?limpar_cart=true">Empty Cart</a>
 </form>
 </body>
 </html>
@@ -135,7 +135,8 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 	$d = $_SESSION['cart']->search_by_index(3);
 
 	$id = $_SESSION['cart']->getId($d);
-	var_dump($id);
+	print var_dump($id)." ^  Show Index  will occur error when you  delete this ID";
+
 
 
 ?>

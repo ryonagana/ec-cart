@@ -32,7 +32,7 @@ for($i = 0; $i < 10; $i++){
 	$c->id =  rand(1,300);
 	$c->name = "Produto ".$i;
 	$c->description = "Description ".$i;
-	$c->price = pow($i, 2) / 2.4 - sqrt(2);
+	$c->price = pow($i, 2) + 130 / sqrt(2);
 	$c->quantity = $i * rand(1,20);
 
 
@@ -47,6 +47,7 @@ for($i = 0; $i < 10; $i++){
 
 
 $_SESSION['cart'] =  $cart;
+header("location: write_session.php");
 
 }else {
 
