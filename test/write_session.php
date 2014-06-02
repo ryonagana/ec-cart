@@ -51,7 +51,8 @@ header("location: write_session.php");
 
 }else {
 
-	echo 'Run <a href="test.php">test.php</a>  to see the results';
+	header("location: test.php");
+	//echo 'Run <a href="test.php">test.php</a>  to see the results';
 
 }
 

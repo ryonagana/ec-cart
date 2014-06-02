@@ -30,6 +30,14 @@ abstract class Product {
 		return $this->price;
 	}
 
+	public function fullPrice(){
+		if($this->price >= 1){
+			return ($this->price * $this->quantity); 
+		}
+	}
+
+
+
 	public  abstract function NetPrice();
 
 

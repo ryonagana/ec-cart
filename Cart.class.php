@@ -12,9 +12,8 @@ class Cart extends ArrayObject {
 	//append a new object to array
 	public  function add($product){
 
-
-		$this->append($product);
-
+		if($product->quantity >= 1) $this->append($product);
+		else $product->quantity = 1; $this->append($product);
 	}
 
 
@@ -94,7 +93,14 @@ class Cart extends ArrayObject {
 		while($it->valid()){
 
 
-			$tot += $it->current()->price;
+			if( $it->current()->quantity >= 1){
+				$tot += $it->current()->fullPrice();
+			}else {
+				$obj = $this->search_by_index($it->key());
+				$obj->quantity = 1;
+
+				$this->updateProduct($it->key(), $obj);
+			}
 			//$this->offsetUnset($it->key());	
 			$it->next();
 		}
