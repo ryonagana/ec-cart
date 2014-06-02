@@ -21,7 +21,7 @@ session_start();
 
 //HERE //////////////////////////////////////
 
-if(!isset($_SESSION['cart'])){
+if(!isset($_SESSION['cart']) || isset($_GET['force']) ){
 $cart = new Cart();
 
 

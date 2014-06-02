@@ -80,6 +80,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 
 
 <form  method="POST">
+	<p>This Lists is been indexed  by the array Index. but you can change to get only ID from your best flavoured DB</p>
 	<table>
 		<thead>
 			<tr>
@@ -126,6 +127,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 		</tbody>
 	</table>
 	<a href="?limpar_cart=true">Empty Cart</a>
+	<a href="write_session.php?force=true">Force Session Write</a>
 </form>
 </body>
 </html>
