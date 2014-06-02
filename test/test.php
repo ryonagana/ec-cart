@@ -81,6 +81,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 
 <form  method="POST">
 	<p>This Lists is been indexed  by the array Index. but you can change to get only ID from your best flavoured DB</p>
+	<a href="write_session.php?force=true">Force Session Write</a>
 	<table>
 		<thead>
 			<tr>
@@ -101,6 +102,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 
 
 				print "No Products";
+				die();
 
 			}else {
 
@@ -127,14 +129,14 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart']) ){
 		</tbody>
 	</table>
 	<a href="?limpar_cart=true">Empty Cart</a>
-	<a href="write_session.php?force=true">Force Session Write</a>
+	
 </form>
 </body>
 </html>
 
 <?php
 	
-	$d = $_SESSION['cart']->search_by_index(3);
+	$d = $_SESSION['cart']->search_by_index(1);
 
 	$id = $_SESSION['cart']->getId($d);
 	print var_dump($id)." ^  Show Index  will occur error when you  delete this ID";

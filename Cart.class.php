@@ -13,7 +13,7 @@ class Cart extends ArrayObject {
 	public  function add($product){
 
 		if($product->quantity >= 1) $this->append($product);
-		else $product->quantity = 1; $this->append($product);
+		//else $product->quantity = 1; $this->append($product);
 	}
 
 
@@ -98,8 +98,8 @@ class Cart extends ArrayObject {
 			}else {
 				$obj = $this->search_by_index($it->key());
 				$obj->quantity = 1;
-
 				$this->updateProduct($it->key(), $obj);
+
 			}
 			//$this->offsetUnset($it->key());	
 			$it->next();

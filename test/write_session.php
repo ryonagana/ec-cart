@@ -25,15 +25,15 @@ if(!isset($_SESSION['cart']) || isset($_GET['force']) ){
 $cart = new Cart();
 
 
-for($i = 0; $i < 10; $i++){
+for($i = 1; $i < rand(1,60); $i++){
 
 	$c = new Produto();
 
-	$c->id =  rand(1,300);
+	$c->id = mt_rand(1, 300);
 	$c->name = "Produto ".$i;
 	$c->description = "Description ".$i;
-	$c->price = pow($i, 2) + 130 / sqrt(2);
-	$c->quantity = $i * rand(1,20);
+	$c->price = pow($i, 2) * 10 / sqrt($i * rand(2,10));
+	$c->quantity = rand(1,10);
 
 
 	$cart->add($c);
